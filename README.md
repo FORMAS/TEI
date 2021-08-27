@@ -12,15 +12,22 @@ TEI is an event trigger identifier system for sentences in the Portuguese langua
 
 The system outputs the identified events  in the following Json format:
 ```json
-[{    "text":     "Vazamentos",
-      "start":    0,
-      "end":      10
- },
- {    "text":     "expõem",
-      "start":    20,
-      "end":      26
- },
-  ...
+[
+    {
+        "text": "Vazamentos",
+        "start": 0,
+        "end": 10
+    },
+    {
+        "text": "expõem",
+        "start": 20,
+        "end": 26
+    },
+    {
+        "text": "diz",
+        "start": 62,
+        "end": 65
+    }
 ]
 ```
 
@@ -78,7 +85,4 @@ $ python3 src/tei.py --sentence 'Vazamentos de dados expõem senhas de funcioná
 
 Peer-reviewed accepted paper:
 
-10th Brazilian Conference on Intelligent Systems (BRACIS)
-
-* Sacramento A. ; Souza M. . Joint Event Extraction with Contextualized Word Embeddings for the Portuguese 
-Language.
+* Sacramento, A., Souza, M.: Joint Event Extraction with Contextualized Word Embeddings for the Portuguese Language. In: 10th Brazilian Conference on Intelligent System, BRACIS, São Paulo, Brazil, from November 29 to December 3, 2021.

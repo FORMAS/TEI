@@ -103,7 +103,7 @@ def get_text_location(text, arg, start_search_at=0):
         return (-1, -1)
 
 
-def predict_events(text, feature_option):
+def predict_events(text, feature_option, is_pprint=True):
     text_tokens = get_sentence_original_tokens(text, tokenize_and_compose(text))
     features = extract(text, {feature_option:True})[feature_option]
     embedding = np.array(features).reshape((len(text_tokens), 768))
@@ -118,6 +118,8 @@ def predict_events(text, feature_option):
         output.append({'text':  text[loc_start:loc_end],
                        'start': loc_start,
                        'end':   loc_end})
+    if is_pprint:
+        return json.dumps(output, indent=4)
     return output
 
 
